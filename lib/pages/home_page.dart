@@ -16,8 +16,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(
-            width: double.infinity,
+          Container(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Stack(
@@ -25,9 +24,7 @@ class _HomePageState extends State<HomePage> {
                   Image.asset(
                     'assets/images/begimai.JPG',
                     width: double.maxFinite,
-
                     fit: BoxFit.fill,
-                    //color: primaryColorOpacity.withOpacity(0.85),
                   ),
                   SafeArea(
                     child: Padding(
@@ -50,23 +47,10 @@ class _HomePageState extends State<HomePage> {
                           Positioned(
                             child: Column(
                               children: [
-                                Container(
-                                  width: 150,
-                                  height: 150,
-                                  clipBehavior: Clip.hardEdge,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                      color: AppColors.white,
-                                      width: 5,
-                                      strokeAlign:
-                                          BorderSide.strokeAlignOutside,
-                                    ),
-                                  ),
-                                  child: Image.network(
-                                    'assets/images/begimai.PNG',
-                                    fit: BoxFit.cover,
-                                  ),
+                                const CircleAvatar(
+                                  backgroundImage:
+                                      AssetImage('assets/images/begimai.JPG'),
+                                  radius: 90,
                                 ),
                                 const SizedBox(
                                   height: 20,
@@ -217,221 +201,223 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          const Wrap(
-            spacing: 8.0, // gap between adjacent chips
-            runSpacing: 4.0, // gap between lines
-            children: [
-              SizedBox(
-                width: 180,
-                height: 100,
-                child: Chip(
-                  label: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Icon(
-                          Icons.star,
-                          color: AppColors.blue,
-                          size: 30,
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          '13',
-                          style: TextStyle(
-                            fontSize: 26,
-                            fontWeight: FontWeight.bold,
+          Container(
+            child: const Wrap(
+              spacing: 8.0, // gap between adjacent chips
+              runSpacing: 4.0, // gap between lines
+              children: [
+                SizedBox(
+                  width: 180,
+                  height: 100,
+                  child: Chip(
+                    label: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Icon(
+                            Icons.star,
+                            color: AppColors.blue,
+                            size: 30,
                           ),
                         ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          AppText.matches,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 180,
-                height: 100,
-                child: Chip(
-                  label: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Icon(
-                          Icons.sentiment_very_dissatisfied,
-                          color: AppColors.blue,
-                          size: 30,
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          '21',
-                          style: TextStyle(
-                            fontSize: 26,
-                            fontWeight: FontWeight.bold,
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '13',
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          AppText.unimat,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 180,
-                height: 100,
-                child: Chip(
-                  label: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Icon(
-                          Icons.playlist_add_check,
-                          color: AppColors.blue,
-                          size: 30,
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          '264',
-                          style: TextStyle(
-                            fontSize: 26,
-                            fontWeight: FontWeight.bold,
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            AppText.matches,
                           ),
                         ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          AppText.all,
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                width: 180,
-                height: 100,
-                child: Chip(
-                  label: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Icon(
-                          Icons.refresh,
-                          color: AppColors.blue,
-                          size: 30,
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          '42',
-                          style: TextStyle(
-                            fontSize: 26,
-                            fontWeight: FontWeight.bold,
+                SizedBox(
+                  width: 180,
+                  height: 100,
+                  child: Chip(
+                    label: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Icon(
+                            Icons.sentiment_very_dissatisfied,
+                            color: AppColors.blue,
+                            size: 30,
                           ),
                         ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          AppText.rematches,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 180,
-                height: 100,
-                child: Chip(
-                  label: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Icon(
-                          Icons.visibility,
-                          color: AppColors.blue,
-                          size: 30,
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          '404',
-                          style: TextStyle(
-                            fontSize: 26,
-                            fontWeight: FontWeight.bold,
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '21',
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          AppText.visitors,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 180,
-                height: 100,
-                child: Chip(
-                  label: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Icon(
-                          Icons.favorite,
-                          color: AppColors.blue,
-                          size: 30,
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          '42',
-                          style: TextStyle(
-                            fontSize: 26,
-                            fontWeight: FontWeight.bold,
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            AppText.unimat,
                           ),
                         ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          AppText.superLikes,
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+                SizedBox(
+                  width: 180,
+                  height: 100,
+                  child: Chip(
+                    label: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Icon(
+                            Icons.playlist_add_check,
+                            color: AppColors.blue,
+                            size: 30,
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '264',
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            AppText.all,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 180,
+                  height: 100,
+                  child: Chip(
+                    label: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Icon(
+                            Icons.refresh,
+                            color: AppColors.blue,
+                            size: 30,
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '42',
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            AppText.rematches,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 180,
+                  height: 100,
+                  child: Chip(
+                    label: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Icon(
+                            Icons.visibility,
+                            color: AppColors.blue,
+                            size: 30,
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '404',
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            AppText.visitors,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 180,
+                  height: 100,
+                  child: Chip(
+                    label: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Icon(
+                            Icons.favorite,
+                            color: AppColors.blue,
+                            size: 30,
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '42',
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            AppText.superLikes,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           )
         ],
       ),
